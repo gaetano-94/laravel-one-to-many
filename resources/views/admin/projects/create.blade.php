@@ -26,6 +26,16 @@
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
+        <div class="mb-3">
+            <label for="content" class="form-label">Tipo</label>
+            <select class="form-select" aria-label="Default select example" name="type_id">
+                <option selected>Apri il menu</option>
+                @foreach ($types as $type)
+                    <option value="{{ $type->id }}" @if (old('type_id') == $type->id) selected @endif>
+                        {{ $type->title }}</option>
+                @endforeach
+            </select>
+        </div>
         <button class="btn btn-success">Crea</button>
     </form>
 @endsection

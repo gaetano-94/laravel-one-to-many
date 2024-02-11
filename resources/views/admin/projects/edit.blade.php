@@ -19,6 +19,16 @@
             @enderror
         </div>
         <div class="mb-3">
+            <label for="content" class="form-label">Tipo</label>
+            <select class="form-select" aria-label="Default select example" name="type_id">
+                <option selected>Apri il menu</option>
+                @foreach ($types as $type)
+                    <option value="{{ $type->id }}" @if (old('type_id', $project->type_id) == $type->id) selected @endif>
+                        {{ $type->title }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="mb-3">
             <label class="form-label">Contenuto</label>
             <textarea class="form-control @error('content') is-invalid
                  @enderror" name="content" id=""
