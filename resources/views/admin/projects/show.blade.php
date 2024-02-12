@@ -6,7 +6,7 @@
         <a href="{{ route('admin.projects.index') }}" class="btn btn-primary btn-sm" role="button">Torna ai Progetti</a>
     </header>
     <div>
-        <strong>Tipo:</strong> {{ $project->type->title }}
+        <strong>Tipo:</strong> {{ $project->type?->title }}
     </div>
     <p>{{ $project->content }}</p>
 @endsection
